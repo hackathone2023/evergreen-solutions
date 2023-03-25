@@ -15,7 +15,7 @@ const series = [{
 const chartSettings = {
   colors: ["#FFCA41", "#43BC13"],
   chart: {
-    height: 350,
+    height: 550,
     type: 'line',
     toolbar: {
       show: false,
@@ -79,7 +79,7 @@ export default function ApexActivityChart() {
       options={chartSettings}
       series={series}
       type="area"
-      height={275}
+      height={400}
     />
   )
 }

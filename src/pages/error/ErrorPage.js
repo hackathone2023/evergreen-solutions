@@ -28,10 +28,10 @@ const ErrorPage = () => {
       <div className={s.imageContainer}>
         <img className={s.errorImage} src={errorImage} alt="Error page" width="80" />
       </div>
-      <div className={s.footer}>
+      {/* <div className={s.footer}>
         <span className={s.footerLabel}>2021 &copy; Flatlogic. Hand-crafted & Made with</span>
         <FooterIcon />
-      </div>
+      </div> */}
     </div>
   );
 }
