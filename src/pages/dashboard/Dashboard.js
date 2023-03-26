@@ -27,6 +27,7 @@ import user from "../../assets/user.svg";
 import statsPie from "../../assets/dashboard/statsPie.svg";
 
 import s from "./Dashboard.module.scss";
+import CommonHeader from "../../components/Header.js";
 
 const Dashboard = () => {
   const [checkboxes, setCheckboxes] = useState([true, false])
@@ -40,6 +41,7 @@ const Dashboard = () => {
 
   return (
     <div>
+      <CommonHeader />
       <Row>
         <Col className="pr-grid-col" xs={12}>
           <Row className="gutter mb-4">

@@ -23,6 +23,7 @@ import GithubIcon from "../../components/Icons/AuthIcons/GithubIcon.js";
 import LinkedinIcon from "../../components/Icons/AuthIcons/LinkedinIcon.js";
 import { registerUser } from "../../actions/register.js";
 import hasToken from "../../services/authService";
+import CommonHeader from "../../components/Header.js";
 
 const Register = (props) => {
   const [state, setState] = useState({ email: '', password: ''} )
@@ -49,21 +50,45 @@ const Register = (props) => {
 
   return (
     <div className="auth-page">
+      <CommonHeader />
       <Container className="col-12">
         <Row className="d-flex align-items-center">
           <Col xs={12} lg={6} className="left-column">
             <Widget className="widget-auth widget-p-lg">
               <div className="d-flex align-items-center justify-content-between py-3">
                 <p className="auth-header mb-0">Sign Up</p>
-                <div className="logo-block">
-                  <SofiaLogo />
-                  <p className="mb-0">SOFIA</p>
-                </div>
-              </div>
-              <div className="auth-info my-2">
-                <p>This is a real app with Node.js backend - use <b>"admin@flatlogic.com / password"</b> to login!</p>
               </div>
               <form onSubmit={(event => doRegister(event))}>
+              <FormGroup  className="my-3">
+                  <div className="d-flex justify-content-between">
+                    <FormText>Name</FormText>
+                  </div>
+                  <Input
+                    id="name"
+                    className="input-transparent pl-3"
+                    value={state.password}
+                    onChange={(event => changeCred(event))}
+                    type="password"
+                    required
+                    name="name"
+                    placeholder="Enter your name here"
+                  />
+                </FormGroup>
+                <FormGroup  className="my-3">
+                  <div className="d-flex justify-content-between">
+                    <FormText>Address</FormText>
+                  </div>
+                  <Input
+                    id="Address"
+                    className="input-transparent pl-3"
+                    value={state.password}
+                    onChange={(event => changeCred(event))}
+                    type="password"
+                    required
+                    name="Address"
+                    placeholder="Enter your address here"
+                  />
+                </FormGroup>
                 <FormGroup className="my-3">
                   <FormText>Email</FormText>
                   <Input
@@ -80,7 +105,6 @@ const Register = (props) => {
                 <FormGroup  className="my-3">
                   <div className="d-flex justify-content-between">
                     <FormText>Password</FormText>
-                    <Link to="/error">Forgot password?</Link>
                   </div>
                   <Input
                     id="password"
@@ -93,21 +117,24 @@ const Register = (props) => {
                     placeholder="Place your password here"
                   />
                 </FormGroup>
+                <FormGroup  className="my-3">
+                  <div className="d-flex justify-content-between">
+                    <FormText>Confirm Password</FormText>
+                  </div>
+                  <Input
+                    id="confirmPassword"
+                    className="input-transparent pl-3"
+                    value={state.password}
+                    onChange={(event => changeCred(event))}
+                    type="password"
+                    required
+                    name="confirmPassword"
+                    placeholder="Retype your password here"
+                  />
+                </FormGroup>
                 <div className="bg-widget d-flex justify-content-center">
                   <Button className="rounded-pill my-3" type="submit" color="secondary-red">Sign Up</Button>
                 </div>
-                <p className="dividing-line my-3">&#8195;Or&#8195;</p>
-                <div className="d-flex align-items-center my-3">
-                  <p className="social-label mb-0">Login with</p>
-                  <div className="socials">
-                    <a href="https://flatlogic.com/"><GoogleIcon /></a>
-                    <a href="https://flatlogic.com/"><TwitterIcon /></a>
-                    <a href="https://flatlogic.com/"><FacebookIcon /></a>
-                    <a href="https://flatlogic.com/"><GithubIcon /></a>
-                    <a href="https://flatlogic.com/"><LinkedinIcon /></a>
-                  </div>
-                </div>
-                <Link to="/login">Enter the account</Link>
               </form>
             </Widget>
           </Col>

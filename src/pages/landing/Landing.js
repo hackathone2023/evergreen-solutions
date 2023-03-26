@@ -20,6 +20,7 @@ import {
 } from 'reactstrap';
 import styled from 'styled-components';
 import hasToken from '../../services/authService';
+import CommonHeader from '../../components/Header';
 
 function Landing() {
     const green = '#00B98E'
@@ -51,18 +52,7 @@ function Landing() {
     return (
         <div className="container-xxl bg-white p-0" style={{ boxSizing: 'border-box' }}>
             <div className="container-xxl position-relative p-0">
-                <StyledNav className="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 d-flex flex-row justify-content-between">
-                    <div className="navbar-brand p-0">
-                        <h3 className="m-0" style={{ color: light }}><p>Evergreen</p><p>Solutions</p></h3>
-                    </div>
-                    <div className="justify-self-end">
-                        <div className="navbar-nav ms-auto py-0">
-                            <LoginLink href="/login" className="nav-item nav-link active">Login</LoginLink>
-                            <SignUpLink href="/signup" className="nav-item nav-link active">Sign up</SignUpLink>
-                        </div>
-                    </div>
-                </StyledNav>
-
+                <CommonHeader showLinks /> 
             </div>
 
 

@@ -38,7 +38,7 @@ const PrivateRoute = ({ dispatch, component, ...rest }) => {
 
 const App = (props) => {
   return (
-    <div>
+    <div style={{ maxWidth: '1232px', margin: 'auto' }}>
       <ToastContainer />
       <Router>
         <Switch>
