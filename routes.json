@@ -1,0 +1,6 @@
+{
+    "/login/authenticate": {
+        "success": true,
+        "evergreenId": "123"
+    }
+}

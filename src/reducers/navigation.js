@@ -1,3 +1,4 @@
+import { FETCH_DASHBOARD_DATA } from "../actions/dashboard.js";
 import {
   OPEN_SIDEBAR,
   CLOSE_SIDEBAR,
@@ -7,6 +8,9 @@ import {
 const initialState = {
   sidebarOpened: false,
   activeItem: JSON.parse(localStorage.getItem('staticSidebar')) ? window.location.pathname : null,
+  dashboardData: {},
+  defaultTab: '',
+  durationTab: ''
 };
 
 export default function runtime(state = initialState, action) {
@@ -24,6 +28,21 @@ export default function runtime(state = initialState, action) {
         ...state,
         activeItem: action.activeItem,
       };
+    case FETCH_DASHBOARD_DATA:
+      return {
+        ...state,
+        dashboardData: action.dashboardData
+      }
+    case 'DEFAULT_TAB':
+      return {
+        ...state,
+        defaultTab: action.defaultTab
+      }
+    case 'DEFAULT_DURATION_TAB':
+      return {
+        ...state,
+        durationTab: action.durationTab
+      }
     default:
       return state;
   }

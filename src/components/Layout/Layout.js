@@ -18,21 +18,26 @@ import Tables from "../../pages/tables/Tables";
 import Charts from "../../pages/uielements/charts/Charts";
 import Icons from "../../pages/uielements/icons/IconsPage";
 import Maps from "../../pages/uielements/maps/google/GoogleMapPage";
+import CommonHeader from "../../components/Header.js";
 
 // -- Component Styles
 import s from "./Layout.module.scss";
 
 const Layout = (props) => {
+  const storage = JSON.parse(localStorage.getItem('user'))
+  const { evergreenId = '' } = !['undefined', 'null', null, undefined].includes(storage) ? storage : {};
+  const userInfo = { evergreenId }
   return (
     <div className={s.root}>
+      <CommonHeader userInfo={userInfo} />
       <div className={s.wrap}>
-        <Header />
+        {/* <Header /> */}
         <Sidebar />
         <main className={s.content}>
           <Breadcrumbs url={props.location.pathname} />
           <Switch>
-            <Route path="/template" exact render={() => <Redirect to="template/dashboard"/>} />
-            <Route path="/template/dashboard" exact component={Dashboard}/>
+            <Route path="/template" exact render={() => <Redirect to="template/dashboard" />} />
+            <Route path="/template/dashboard" exact component={Dashboard} />
             <Route path="/template/typography" exact component={Typography} />
             <Route path="/template/tables" exact component={Tables} />
             <Route path="/template/notifications" exact component={Notifications} />

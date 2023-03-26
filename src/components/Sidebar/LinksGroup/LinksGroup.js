@@ -72,7 +72,6 @@ const LinksGroup = (props) => {
   }
   return (
     <Route
-      path={props.link}
       children={(params) => {
         const { match } = params;
         return (
