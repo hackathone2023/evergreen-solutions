@@ -17,6 +17,7 @@ const Widget = (props) => {
   return (
     <>
       <section
+        style={{ maxHeight: '500px' }}
         className={s.widget}
         {...restProps}
       >

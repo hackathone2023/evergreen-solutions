@@ -1,21 +1,22 @@
 {
   "authenticate": {
     "data": {
-      "password": "123456789",
-      "evergreenId": "SusmitoB"
+      "password": "1234556",
+      "evergreenId": "EGS007"
     },
     "success": true
   },
   "signup": {
     "data": {
-      "name": "Susmito Bhattacharyya",
-      "Address": "54, J.T.P. Road, Bailunthapur",
-      "email": "test@123.com",
-      "password": "123456789",
-      "confirmPassword": "665"
+      "email": "john.doe@raymonds.com",
+      "password": "1234567",
+      "name": "John Doe",
+      "companyName": "Raymonds",
+      "Address": "Raymonds, India",
+      "confirmPassword": "1234567"
     },
     "success": true,
-    "evergreenId": "SusmitoB"
+    "evergreenId": "EGS007"
   },
   "usage": {
     "success": true,

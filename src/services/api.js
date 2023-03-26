@@ -108,7 +108,7 @@ const mockData = {
 
 export const loginApi = (data) => isProd ? axios.post(`${url}/login/authenticate`, data) : axios.post(`${url}/authenticate`, { data, success: true });
 
-export const registerApi = (data) => isProd ? axios.post(`${url}/login/signup`, data) : axios.post(`${url}/signup`, { data, success: true, evergreenId: "SusmitoB" });
+export const registerApi = (data) => isProd ? axios.post(`${url}/login/signup`, data) : axios.post(`${url}/signup`, { data, success: true, evergreenId: "EGS007" });
 
 // export const usageApi = (data) => isProd ? axios.post(`${usegeInfoUrl}/companyinfo/usage`, data) : axios.post(`${usegeInfoUrl}/usage`, { data: mockData, "success": true, evergreenId: "SusmitoB" });
 

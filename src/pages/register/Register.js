@@ -70,7 +70,22 @@ const Register = (props) => {
                 </FormGroup>
                 <FormGroup  className="my-3">
                   <div className="d-flex justify-content-between">
-                    <FormText>Address</FormText>
+                    <FormText>Company Name</FormText>
+                  </div>
+                  <Input
+                    id="name"
+                    className="input-transparent pl-3"
+                    value={state.companyName}
+                    onChange={(event => changeCred(event))}
+                    type="text"
+                    required
+                    name="companyName"
+                    placeholder="Enter your company's name here"
+                  />
+                </FormGroup>
+                <FormGroup  className="my-3">
+                  <div className="d-flex justify-content-between">
+                    <FormText>Business Address</FormText>
                   </div>
                   <Input
                     id="Address"
@@ -84,7 +99,7 @@ const Register = (props) => {
                   />
                 </FormGroup>
                 <FormGroup className="my-3">
-                  <FormText>Email</FormText>
+                  <FormText>Business Email</FormText>
                   <Input
                     id="email"
                     className="input-transparent pl-3"

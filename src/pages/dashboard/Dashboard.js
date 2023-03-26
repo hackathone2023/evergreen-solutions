@@ -8,7 +8,8 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  UncontrolledDropdown
+  UncontrolledDropdown,
+  Button
 } from "reactstrap";
 import { fetchData } from "../../actions/dashboard.js";
 import Widget from "../../components/Widget/Widget.js";
@@ -49,6 +50,8 @@ const Dashboard = () => {
     }
   }
 
+  const [showMsg, setShowMsg] = useState(false)
+
   return (
     <div>
       <Row>
@@ -72,6 +75,36 @@ const Dashboard = () => {
                 </div>
                 <ApexActivityChart className="pb-4" />
               </Widget>
+              <div className="pt-5" style={{ display: 'grid', placeItems: 'center' }}>
+                {!showMsg ? <Button style={{ backgroundColor: '#00B98E', color: '#F3F6F8' }} onClick={() => setShowMsg(true)}>Calculate Green Index</Button> : <><p>
+                  Your Green Index is <b>3.75</b>/5
+                </p><table style={{ marginTop: '2rem' }}>
+                    <tr>
+                      <th><b>Wastage Type</b></th>
+                      <th><b>Wastage %</b></th>
+                    </tr>
+                    <tr>
+                      <td>Chemical</td>
+                      <td>30</td>
+                    </tr>
+                    <tr>
+                      <td>Energy</td>
+                      <td>25</td>
+                    </tr>
+                    <tr>
+                      <td>Fabric</td>
+                      <td>15</td>
+                    </tr>
+                    <tr>
+                      <td className="pr-4">Raw Materials</td>
+                      <td>20</td>
+                    </tr>
+                    <tr>
+                      <td>Water</td>
+                      <td>35</td>
+                    </tr>
+                  </table></>}
+              </div>
             </Col>
           </Row>
         </Col>
