@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import hero from './img/hero.png'
+import hero from './img/hero1.png'
 import about from './img/3381601.jpg'
 import newsLetter from './img/newsletter.png'
 import { Redirect } from 'react-router';

@@ -15,7 +15,7 @@ function GreenPoint() {
       return;
     }
     // redirect to another page
-    history.push(`/confirmation/${mobileNumber}`);
+    history.push(`/greenpoint-info`);
   };
 
   const handleChange = (e) => {
