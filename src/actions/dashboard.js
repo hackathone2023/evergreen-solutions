@@ -6,9 +6,9 @@ export const FETCH_DASHBOARD_DATA_SUCCESS = 'FETCH_DASHBOARD_DATA_SUCCESS';
 export const FETCH_DASHBOARD_DATA_FAILURE = 'FETCH_DASHBOARD_DATA_FAILURE';
 
 export const fetchDashboardData = (payload) => async (dispatch) => {
-    const { data } = await usageApi(payload)
-    if (data?.data?.success) {
-        dispatch({ type: FETCH_DASHBOARD_DATA, dashboardData: data.data});
+    const { data } = await usageApi({ evergreenId: payload })
+    if (data?.success) {
+        dispatch({ type: FETCH_DASHBOARD_DATA, dashboardData: data.data });
     }
 }
 

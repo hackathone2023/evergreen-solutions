@@ -27,8 +27,8 @@ const Sidebar = (props) => {
 
   const dashboardData = useSelector(state => state?.navigation?.dashboardData || {})
   let stages = []
-  if (dashboardData.data) {
-    stages = Object.keys(dashboardData.data)
+  if (dashboardData) {
+    stages = Object.keys(dashboardData)
   }
 
   return (

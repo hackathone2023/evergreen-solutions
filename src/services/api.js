@@ -2,11 +2,11 @@ import axios from "axios";
 import dotenv from "dotenv";
 
 dotenv.config();
-const isProd = false
+const isProd = true
 
 const url = isProd ? "https://green-login-service.azurewebsites.net" : "http://localhost:5000";
 
-const usegeInfoUrl = isProd ? "https://green-login-service.azurewebsites.net" : "http://localhost:5000";
+const usegeInfoUrl = isProd ? "https://green-rating-service.azurewebsites.net" : "http://localhost:5000";
 
 // const islocal = window.location.href.includes('localhost')
 // const islocal = false
@@ -209,4 +209,4 @@ const itemdata = {
     }
 }
 
-export const usageApi = (data) => isProd ? axios.post(`${usegeInfoUrl}/companyinfo/usage`, data) : axios.post(`${usegeInfoUrl}/usage`, { data: itemdata });
+export const usageApi = (val) => isProd ? axios.post(`${usegeInfoUrl}/companyinfo/usage`, val) : axios.post(`${usegeInfoUrl}/usage`, { ...itemdata });

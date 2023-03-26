@@ -18,7 +18,7 @@ export default function ApexActivityChart() {
   const dashboardData = useSelector(state => state?.navigation?.dashboardData || {})
   let data = [], label = []; 
   if (defaultTab && durationTab) {
-    ({ data, label } = dashboardData.data[defaultTab][durationTab])
+    ({ data, label } = dashboardData[defaultTab][durationTab])
   }
   const series = [{
     name: 'Your Activity',

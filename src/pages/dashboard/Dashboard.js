@@ -39,9 +39,9 @@ const Dashboard = () => {
   let stages = []
   let durationTabArr = []
   if (Object.keys(dashboardData).length > 0) {
-    stages = Object.keys(dashboardData.data) || []
+    stages = Object.keys(dashboardData) || []
     if (stages.length > 0)
-      durationTabArr = Object.keys(dashboardData.data[stages[0]])
+      durationTabArr = Object.keys(dashboardData[stages[0]])
     if (!defaultTab) {
       console.log({ stages })
       dispatch({ type: 'DEFAULT_TAB', defaultTab: stages[0] })
