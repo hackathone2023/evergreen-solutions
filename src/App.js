@@ -28,7 +28,7 @@ import "./styles/app.scss";
 import Landing from "./pages/landing/Landing";
 
 const PrivateRoute = ({ dispatch, component, ...rest }) => {
-  if (!isAuthenticated(JSON.parse(localStorage.getItem("authenticated")))) {
+  if (!isAuthenticated(JSON.parse(sessionStorage.getItem("authenticated")))) {
     dispatch(logoutUser());
     return (<Redirect to="/login" />)
   } else {

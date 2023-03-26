@@ -24,7 +24,7 @@ import CommonHeader from "../../components/Header.js";
 import s from "./Layout.module.scss";
 
 const Layout = (props) => {
-  const storage = JSON.parse(localStorage.getItem('user'))
+  const storage = JSON.parse(sessionStorage.getItem('user'))
   const { evergreenId = '' } = !['undefined', 'null', null, undefined].includes(storage) ? storage : {};
   const userInfo = { evergreenId }
   return (

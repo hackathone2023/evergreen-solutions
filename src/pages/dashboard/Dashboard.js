@@ -24,7 +24,7 @@ const Dashboard = () => {
     water: 'Billion Gallons',
   }
   const dispatch = useDispatch()
-  const storage = JSON.parse(localStorage.getItem('user'))
+  const storage = JSON.parse(sessionStorage.getItem('user'))
   const { evergreenId = '' } = !['undefined', 'null', null, undefined].includes(storage) ? storage : {};
 
   const dashboardData = useSelector(state => state?.navigation?.dashboardData || {})

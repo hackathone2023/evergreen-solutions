@@ -26,7 +26,7 @@ import LinkedinIcon from "../../components/Icons/AuthIcons/LinkedinIcon.js";
 import CommonHeader from "../../components/Header";
 
 const Login = (props) => {
-  const storage = JSON.parse(localStorage.getItem('user'))
+  const storage = JSON.parse(sessionStorage.getItem('user'))
   const { evergreenId = '' } = !['undefined', 'null', null, undefined].includes(storage) ? storage : {};
 
   const [state, setState] = useState({
@@ -44,7 +44,7 @@ const Login = (props) => {
   }
 
   const { from } = props.location.state || { from: { pathname: '/template' }};
-  if (hasToken(JSON.parse(localStorage.getItem('authenticated')))) {
+  if (hasToken(JSON.parse(sessionStorage.getItem('authenticated')))) {
     return (
       <Redirect to={from} />
     )

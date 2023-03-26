@@ -4,7 +4,7 @@ import {
   LOGOUT_SUCCESS,
 } from "../actions/auth.js";
 
-const authenticated = localStorage.getItem('authenticated');
+const authenticated = sessionStorage.getItem('authenticated');
 
 export default function auth(state = {
   isFetching: false,

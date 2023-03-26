@@ -8,8 +8,8 @@ export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
 export const receiveLogin = (creds) => async (dispatch) => {
   const { data } = await loginApi(creds);
   if (data?.success) {
-    localStorage.setItem('user', JSON.stringify(creds));
-    localStorage.setItem('authenticated', true)
+    sessionStorage.setItem('user', JSON.stringify(creds));
+    sessionStorage.setItem('authenticated', true)
     dispatch({ type: LOGIN_SUCCESS })
   }
   else dispatch({
@@ -40,8 +40,8 @@ export function receiveLogout() {
 export function logoutUser() {
   return (dispatch) => {
     dispatch(requestLogout());
-    localStorage.removeItem('authenticated');
-    localStorage.removeItem('user')
+    sessionStorage.removeItem('authenticated');
+    sessionStorage.removeItem('user')
     dispatch(receiveLogout());
   };
 }

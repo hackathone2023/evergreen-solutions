@@ -7,7 +7,7 @@ import {
 
 const initialState = {
   sidebarOpened: false,
-  activeItem: JSON.parse(localStorage.getItem('staticSidebar')) ? window.location.pathname : null,
+  activeItem: JSON.parse(sessionStorage.getItem('staticSidebar')) ? window.location.pathname : null,
   dashboardData: {},
   defaultTab: '',
   durationTab: ''

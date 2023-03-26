@@ -43,7 +43,7 @@ function Landing() {
         border-radius: 0  0 30px 30px;
     `
 
-    // if (hasToken(JSON.parse(localStorage.getItem('authenticated')))) {
+    // if (hasToken(JSON.parse(sessionStorage.getItem('authenticated')))) {
     //     return (
     //         <Redirect to={"/template/dashboard"} />
     //     )

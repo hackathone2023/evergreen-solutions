@@ -9,7 +9,7 @@ export const receiveRegister = (info) => async (dispatch) => {
   console.log({ creds: info.creds })
   const { data } = await registerApi(info.creds)
   if (data?.success) {
-    localStorage.setItem('user', JSON.stringify({ evergreenId: data.evergreenId || '' }));
+    sessionStorage.setItem('user', JSON.stringify({ evergreenId: data.evergreenId || '' }));
     info?.history?.push('/login');
     dispatch({ type: REGISTER_SUCCESS, history: info.history });
   }
