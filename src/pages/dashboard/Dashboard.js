@@ -76,6 +76,7 @@ const Dashboard = () => {
                 <ApexActivityChart className="pb-4" />
               </Widget>
               <div className="pt-5" style={{ display: 'grid', placeItems: 'center' }}>
+                {/* In future on click of the Calculate Green Index button we will call a backend API which will trigger backend operations to fetch the Green Index and Wastage percentage */}
                 {!showMsg ? <Button style={{ backgroundColor: '#00B98E', color: '#F3F6F8' }} onClick={() => setShowMsg(true)}>Calculate Green Index</Button> : <><p>
                   Your Green Index is <b>3.75</b>/5
                 </p><table style={{ marginTop: '2rem' }}>
@@ -103,7 +104,9 @@ const Dashboard = () => {
                       <td>Water</td>
                       <td>35</td>
                     </tr>
-                  </table></>}
+                  </table>
+                  <p></p>
+                  </>}
               </div>
             </Col>
           </Row>

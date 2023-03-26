@@ -1,19 +1,19 @@
 {
   "authenticate": {
     "data": {
-      "password": "1234556",
+      "password": "1232424",
       "evergreenId": "EGS007"
     },
     "success": true
   },
   "signup": {
     "data": {
-      "email": "john.doe@raymonds.com",
-      "password": "1234567",
-      "name": "John Doe",
+      "email": "john@raymonds.com",
+      "password": "123456",
+      "name": "John",
       "companyName": "Raymonds",
       "Address": "Raymonds, India",
-      "confirmPassword": "1234567"
+      "confirmPassword": "123456"
     },
     "success": true,
     "evergreenId": "EGS007"
