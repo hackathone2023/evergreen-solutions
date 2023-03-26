@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router'
 import styled from 'styled-components'
 import { logoutUser } from '../actions/auth'
 
@@ -29,9 +30,11 @@ const CommonHeader = ({ showLinks = false, userInfo = { evergreenId: '' } }) => 
         dispatch(logoutUser())
     }
 
+    const history = useHistory()
+
     return (
         <StyledNav className="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 d-flex flex-row justify-content-between">
-            <div className="navbar-brand p-0">
+            <div className="navbar-brand p-0" style={{ cursor: 'pointer' }} onClick={() => history.push('/')}>
                 <h3 className="m-0" style={{ color: light }}><p>Evergreen</p><p>Solutions</p></h3>
             </div>
             {showLinks ? <div className="justify-self-end">
