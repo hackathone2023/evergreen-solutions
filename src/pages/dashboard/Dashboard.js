@@ -57,13 +57,14 @@ const Dashboard = () => {
             <Col className="mb-4 mb-md-0" xs={12}>
               <Widget className="">
                 <div className="d-flex justify-content-between widget-p-md">
-                  <div className="headline-3 d-flex align-items-center">{`${defaultTab} values are in ${units[defaultTab] || 'Kilo units'}`}</div>
+                  <div className="headline-3 d-flex align-items-center"><span className="text-capitalize">{defaultTab}&nbsp;</span>{` values are in ${units[defaultTab.toLowerCase()] || 'Kilo units'}`}</div>
                   <UncontrolledDropdown>
-                    <DropdownToggle caret>
+                    <DropdownToggle className="text-capitalize" caret>
                       &nbsp; {durationTab} &nbsp;
                     </DropdownToggle>
                     <DropdownMenu>
                       {durationTabArr.map((item) => <DropdownItem
+                        className="text-capitalize"
                         onClick={() => dispatch({ type: 'DEFAULT_DURATION_TAB', durationTab: item })}
                       >{item}</DropdownItem>)}
                     </DropdownMenu>

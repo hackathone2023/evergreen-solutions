@@ -2,7 +2,7 @@
   "authenticate": {
     "data": {
       "password": "123456789",
-      "evergreenId": "test@123.com"
+      "evergreenId": "SusmitoB"
     },
     "success": true
   },
@@ -98,7 +98,7 @@
           ]
         }
       },
-      "Energy": {
+      "energy": {
         "weekly": {
           "label": [
             "WEEK_1",
@@ -254,7 +254,7 @@
           ]
         }
       },
-      "Raw Materials": {
+      "raw Materials": {
         "weekly": {
           "label": [
             "WEEK_1",

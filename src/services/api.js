@@ -2,7 +2,7 @@ import axios from "axios";
 import dotenv from "dotenv";
 
 dotenv.config();
-const isProd = true
+const isProd = window.location.href.indexOf('localhost') === -1
 
 const url = isProd ? "https://green-login-service.azurewebsites.net" : "http://localhost:5000";
 
@@ -134,7 +134,7 @@ const itemdata = {
                 "data": ["1470", "1410", "1270", "1340", "1510"]
             }
         },
-        "Energy": {
+        "energy": {
             "weekly": {
                 "label": ["WEEK_1", "WEEK_2", "WEEK_3", "WEEK_4", "WEEK_5"],
                 "data": ["26", "24", "18", "18", "18"]
@@ -170,7 +170,7 @@ const itemdata = {
                 "data": ["820", "780", "630", "710", "850"]
             }
         },
-        "Raw Materials": {
+        "raw Materials": {
             "weekly": {
                 "label": ["WEEK_1", "WEEK_2", "WEEK_3", "WEEK_4", "WEEK_5"],
                 "data": ["1.2", "1.3", "2.1", "1.9", "1.5"]

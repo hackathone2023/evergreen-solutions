@@ -39,7 +39,7 @@ const Sidebar = (props) => {
         {stages?.map((item) => {
           return <li className='mt-3' style={{ minWidth: '200px', cursor: 'pointer' }}
             onClick={() => props.dispatch({ type: 'DEFAULT_TAB', defaultTab: item })}
-          ><Button style={{ minWidth: '200px' }}>{item}</Button></li>
+          ><Button className='text-capitalize' style={{ minWidth: '200px' }}>{item}</Button></li>
         })}
       </ul>
       {/* <div className="bg-widget d-flex mt-auto ml-1">
