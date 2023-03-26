@@ -34,7 +34,7 @@ const Sidebar = (props) => {
   return (
     <nav className={cn(s.root, { [s.sidebarOpen]: burgerSidebarOpen })} >
       <ul className={s.nav}>
-        <h5 className={s.navTitle}>STAGES</h5>
+        <h5 className={s.navTitle}>USAGES</h5>
         <div className='pt-2' />
         {stages?.map((item) => {
           return <li className='mt-3' style={{ minWidth: '200px', cursor: 'pointer' }}

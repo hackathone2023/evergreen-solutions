@@ -13,7 +13,7 @@ const usegeInfoUrl = isProd ? "https://green-login-service.azurewebsites.net" : 
 
 const mockData = {
     data: {
-        "chemical": {
+        "Chemical": {
             "weekly": {
                 "label": ["WEEK_1", "WEEK_2", "WEEK_3", "WEEK_4", "WEEK_5"],
                 "data": ["26", "24", "28", "27", "25"]
@@ -31,7 +31,7 @@ const mockData = {
                 "data": ["1470", "1410", "1270", "1340", "1510"]
             }
         },
-        "energy": {
+        "Energy": {
             "weekly": {
                 "label": ["WEEK_1", "WEEK_2", "WEEK_3", "WEEK_4", "WEEK_5"],
                 "data": ["26", "24", "18", "18", "18"]
@@ -49,7 +49,7 @@ const mockData = {
                 "data": ["1470", "1410", "1270", "1340", "1510"]
             }
         },
-        "fabric": {
+        "Fabric": {
             "weekly": {
                 "label": ["WEEK_1", "WEEK_2", "WEEK_3", "WEEK_4", "WEEK_5"],
                 "data": ["11", "14", "8", "13", "15"]
@@ -67,7 +67,7 @@ const mockData = {
                 "data": ["820", "780", "630", "710", "850"]
             }
         },
-        "rawMaterials": {
+        "Raw Materials": {
             "weekly": {
                 "label": ["WEEK_1", "WEEK_2", "WEEK_3", "WEEK_4", "WEEK_5"],
                 "data": ["1.2", "1.3", "2.1", "1.9", "1.5"]
@@ -85,7 +85,7 @@ const mockData = {
                 "data": ["86", "63", "75", "82", "91"]
             }
         },
-        "water": {
+        "Water": {
             "weekly": {
                 "label": ["WEEK_1", "WEEK_2", "WEEK_3", "WEEK_4", "WEEK_5"],
                 "data": ["26", "24", "28", "27", "25"]
@@ -116,7 +116,7 @@ export const registerApi = (data) => isProd ? axios.post(`${url}/login/signup`, 
 const itemdata = {
     "success": true,
     "data": {
-        "chemical": {
+        "Chemical": {
             "weekly": {
                 "label": ["WEEK_1", "WEEK_2", "WEEK_3", "WEEK_4", "WEEK_5"],
                 "data": ["26", "24", "28", "27", "25"]
@@ -134,7 +134,7 @@ const itemdata = {
                 "data": ["1470", "1410", "1270", "1340", "1510"]
             }
         },
-        "energy": {
+        "Energy": {
             "weekly": {
                 "label": ["WEEK_1", "WEEK_2", "WEEK_3", "WEEK_4", "WEEK_5"],
                 "data": ["26", "24", "18", "18", "18"]
@@ -152,7 +152,7 @@ const itemdata = {
                 "data": ["1470", "1410", "1270", "1340", "1510"]
             }
         },
-        "fabric": {
+        "Fabric": {
             "weekly": {
                 "label": ["WEEK_1", "WEEK_2", "WEEK_3", "WEEK_4", "WEEK_5"],
                 "data": ["11", "14", "8", "13", "15"]
@@ -170,7 +170,7 @@ const itemdata = {
                 "data": ["820", "780", "630", "710", "850"]
             }
         },
-        "rawMaterials": {
+        "Raw Materials": {
             "weekly": {
                 "label": ["WEEK_1", "WEEK_2", "WEEK_3", "WEEK_4", "WEEK_5"],
                 "data": ["1.2", "1.3", "2.1", "1.9", "1.5"]
@@ -188,7 +188,7 @@ const itemdata = {
                 "data": ["86", "63", "75", "82", "91"]
             }
         },
-        "water": {
+        "Water": {
             "weekly": {
                 "label": ["WEEK_1", "WEEK_2", "WEEK_3", "WEEK_4", "WEEK_5"],
                 "data": ["26", "24", "28", "27", "25"]
