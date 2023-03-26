@@ -1,12 +1,20 @@
+import { loginApi } from "../services/api";
+
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 export const LOGOUT_REQUEST = 'LOGOUT_REQUEST';
 export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
 
-export function receiveLogin() {
-  return {
-    type: LOGIN_SUCCESS
-  };
+export const receiveLogin = (creds) => async (dispatch) => {
+  const { data } = await loginApi(creds);
+  if (data?.success) {
+    localStorage.setItem('user', JSON.stringify(creds));
+    localStorage.setItem('authenticated', true)
+    dispatch({ type: LOGIN_SUCCESS })
+  }
+  else dispatch({
+    type: LOGIN_FAILURE, payload: 'Something was wrong. Try again',
+  })
 }
 
 function loginError(payload) {
@@ -33,15 +41,15 @@ export function logoutUser() {
   return (dispatch) => {
     dispatch(requestLogout());
     localStorage.removeItem('authenticated');
+    localStorage.removeItem('user')
     dispatch(receiveLogout());
   };
 }
 
 export function loginUser(creds) {
   return (dispatch) => {
-    dispatch(receiveLogin());
-    if (creds.email.length > 0 && creds.password.length > 0) {
-      localStorage.setItem('authenticated', true)
+    if (creds.evergreenId.length > 0 && creds.password.length > 0) {
+      dispatch(receiveLogin(creds));
     } else {
       dispatch(loginError('Something was wrong. Try again'));
     }

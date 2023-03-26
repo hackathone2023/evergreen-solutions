@@ -26,15 +26,17 @@ import LinkedinIcon from "../../components/Icons/AuthIcons/LinkedinIcon.js";
 import CommonHeader from "../../components/Header";
 
 const Login = (props) => {
+  const storage = JSON.parse(localStorage.getItem('user'))
+  const { evergreenId = '' } = !['undefined', 'null', null, undefined].includes(storage) ? storage : {};
 
   const [state, setState] = useState({
-    email: 'admin@flatlogic.com',
-    password: 'password',
+    evergreenId,
+    password: '',
   })
 
   const doLogin = (e) => {
     e.preventDefault();
-    props.dispatch(loginUser({ password: state.password, email: state.email }))
+    props.dispatch(loginUser({ password: state.password, evergreenId: state.evergreenId }))
   }
 
   const changeCreds = (event) => {
@@ -60,16 +62,16 @@ const Login = (props) => {
               </div>
               <form onSubmit={(event) => doLogin(event)}>
                 <FormGroup className="my-3">
-                  <FormText>Email</FormText>
+                  <FormText>Evergreen Id</FormText>
                   <Input
-                    id="email"
+                    id="evergreenId"
                     className="input-transparent pl-3"
-                    value={state.email}
+                    value={state.evergreenId}
                     onChange={(event) => changeCreds(event)}
-                    type="email"
+                    type="text"
                     required
-                    name="email"
-                    placeholder="Email"
+                    name="evergreenId"
+                    placeholder="Enter your evergreenId here"
                   />
                 </FormGroup>
                 <FormGroup  className="my-3">
@@ -84,7 +86,7 @@ const Login = (props) => {
                     type="password"
                     required
                     name="password"
-                    placeholder="Password"
+                    placeholder="Enter your password here"
                   />
                 </FormGroup>
                 <div className="bg-widget d-flex justify-content-center">

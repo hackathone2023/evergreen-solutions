@@ -15,18 +15,12 @@ import Widget from "../../components/Widget/Widget.js";
 import Footer from "../../components/Footer/Footer.js";
 
 import loginImage from "../../assets/registerImage.svg";
-import SofiaLogo from "../../components/Icons/SofiaLogo.js";
-import GoogleIcon from "../../components/Icons/AuthIcons/GoogleIcon.js";
-import TwitterIcon from "../../components/Icons/AuthIcons/TwitterIcon.js";
-import FacebookIcon from "../../components/Icons/AuthIcons/FacebookIcon.js";
-import GithubIcon from "../../components/Icons/AuthIcons/GithubIcon.js";
-import LinkedinIcon from "../../components/Icons/AuthIcons/LinkedinIcon.js";
 import { registerUser } from "../../actions/register.js";
 import hasToken from "../../services/authService";
 import CommonHeader from "../../components/Header.js";
 
 const Register = (props) => {
-  const [state, setState] = useState({ email: '', password: ''} )
+  const [state, setState] = useState({} )
 
   const changeCred = (event) => {
     setState({ ...state, [event.target.name]: event.target.value })
@@ -66,9 +60,9 @@ const Register = (props) => {
                   <Input
                     id="name"
                     className="input-transparent pl-3"
-                    value={state.password}
+                    value={state.name}
                     onChange={(event => changeCred(event))}
-                    type="password"
+                    type="text"
                     required
                     name="name"
                     placeholder="Enter your name here"
@@ -81,9 +75,9 @@ const Register = (props) => {
                   <Input
                     id="Address"
                     className="input-transparent pl-3"
-                    value={state.password}
+                    value={state.Address}
                     onChange={(event => changeCred(event))}
-                    type="password"
+                    type="text"
                     required
                     name="Address"
                     placeholder="Enter your address here"
@@ -99,7 +93,7 @@ const Register = (props) => {
                     type="email"
                     required
                     name="email"
-                    placeholder="Henry Monk"
+                    placeholder="Enter your email here"
                   />
                 </FormGroup>
                 <FormGroup  className="my-3">
@@ -124,7 +118,7 @@ const Register = (props) => {
                   <Input
                     id="confirmPassword"
                     className="input-transparent pl-3"
-                    value={state.password}
+                    value={state.confirmPassword}
                     onChange={(event => changeCred(event))}
                     type="password"
                     required
