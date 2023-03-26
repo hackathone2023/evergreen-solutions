@@ -49,6 +49,8 @@ const App = (props) => {
           <Route path="/login" exact component={Login} />
           <Route path="/error" exact component={ErrorPage} />
           <Route path="/register" exact component={Register} />
+          <Route path="/greenpoint" component={GreenPoint} />
+          <Route path="/greenpoint-info" component={GreenPointRedemption} />   
           <Route component={ErrorPage} />
           <Route path='*' exact={true} render={() => <Redirect to="/error" />} />
         </Switch>
