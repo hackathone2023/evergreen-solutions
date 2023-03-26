@@ -11,6 +11,8 @@ import LayoutComponent from "./components/Layout/Layout";
 import ErrorPage from "./pages/error/ErrorPage";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
+import GreenPoint from "./pages/greenpoint/greenpoint";
+import GreenPointRedemption from "./pages/greenPointRedemption/greenPointRedemption";
 
 // -- Redux Actions
 import { logoutUser } from "./actions/auth";
@@ -22,7 +24,7 @@ import { ToastContainer } from "react-toastify";
 import isAuthenticated from "./services/authService";
 
 // -- Component Styles
-import "./styles/app.scss";
+// import "./styles/app.scss";
 import Landing from "./pages/landing/Landing";
 
 const PrivateRoute = ({ dispatch, component, ...rest }) => {
@@ -49,6 +51,8 @@ const App = (props) => {
           <Route path="/login" exact component={Login} />
           <Route path="/error" exact component={ErrorPage} />
           <Route path="/register" exact component={Register} />
+          <Route path="/greenpoint" component={GreenPoint} />
+          <Route path="/greenpoint-info" component={GreenPointRedemption} />   
           <Route component={ErrorPage} />
           <Route path='*' exact={true} render={() => <Redirect to="/error" />} />
         </Switch>
